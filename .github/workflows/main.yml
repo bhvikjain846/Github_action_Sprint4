@@ -3,7 +3,12 @@ name : Testing-Workflow
 on :
   push : 
     branches : ["master"]
+  
+  workflow_dispatch:
 
+env :
+  msg : my name is bhvik
+  
 jobs : 
   job1 : 
     runs-on : ubuntu-latest
@@ -14,5 +19,18 @@ jobs :
         with:
           python-version: '3.10'
 
-      - name : Run first program       
+      - name : Run first job     
         run: python first.py
+
+  job2 :
+    runs-on : windows-latest
+
+    steps:
+      - uses: actions/checkout@v3 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name : Run Second job1
+        run : python.second.py
+        
