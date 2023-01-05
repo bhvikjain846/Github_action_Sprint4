@@ -1,5 +1,5 @@
 #binary to decimal
-b=1010111
+b=input("Enter a binary no.: ")
 def btod(b):
     d = 0
     for number in b:
