@@ -1,5 +1,5 @@
 #decimal to binary
-d=21
+d=input()
 def dtob(d):
     if d > 1:
         dtob(d // 2)
