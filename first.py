@@ -1,4 +1,4 @@
-#decimal to binary
+# decimal to binary
 d=input()
 def dtob(d):
     if d > 1:

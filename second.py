@@ -1,5 +1,6 @@
 print("My name is Bhvik Jain")
 
+# binary to decimal
 b=input()
 def btod(b):
     d = 0
