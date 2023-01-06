@@ -1,9 +1,9 @@
-# get the occurence of all vowels and consonent from the large given string.
+print("My name is Bhvik Jain")
 
-def vc(string):
-   vowels=[each for each in string if each in "aeiouAEIOU"]
-   print("Length of the vowels from a string: ",len(vowels))
-   consonent=[each for each in string if each not in "aeiouAEIOU "]
-   print("length of the consonants from a string: ",len(consonent))
-string=input()
-vc(string)
+b=input()
+def btod(b):
+    d = 0
+    for number in b:
+        d = d*2 + int(number)
+    print(d)
+btod(b)

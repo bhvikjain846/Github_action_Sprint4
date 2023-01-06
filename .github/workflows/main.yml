@@ -5,18 +5,19 @@ on :
   #   branches : ["master"]
   
   workflow_dispatch:
-    inputs : 
-      num1 :
-        description: "Enter a string:  "
-        required: true
+    # inputs : 
+    #   num1 :
+    #     description: "Enter a decimal no.: "
+    #     required: true
 
-      num2 :
-        description: 'Enter a string: '
-        required: true
+    #   num2 :
+    #     description: "Enter a binary no.: "
+    #     required: true
 
 env :
-  a: ${{github.event.inputs.num1}}
-  b: ${{github.event.inputs.num2}}
+  msg : I am bhvik jain
+  # d: ${{github.event.inputs.num1}}
+  # b: ${{github.event.inputs.num2}}
   
 jobs : 
   job1 : 
@@ -29,17 +30,18 @@ jobs :
           python-version: '3.10'
 
       - name : Run first job     
-        run: python first.py $a
+        run: |
+         echo $msg
 
-  job2 :
-    runs-on : ubuntu-latest
+  # job2 :
+  #   runs-on : ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+  #   steps:
+  #     - uses: actions/checkout@v3 
+  #     - uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.10'
 
-      - name : Run second job
-        run : python second.py $b
+  #     - name : Run second job
+  #       run : python second.py $b
 
