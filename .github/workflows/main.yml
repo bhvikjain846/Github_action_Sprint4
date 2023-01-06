@@ -5,18 +5,18 @@ on :
   #   branches : ["master"]
   
   workflow_dispatch:
-    # inputs : 
-    #   num1 :
-    #     description: "Enter a decimal no.: "
-    #     required: true
+    inputs : 
+      num1 :
+        description: "Enter a decimal no.: "
+        required: true
 
     #   num2 :
     #     description: "Enter a binary no.: "
     #     required: true
 
 env :
-  msg : I am bhvik jain
-  # d: ${{github.event.inputs.num1}}
+  # msg : I am bhvik jain
+  d: ${{github.event.inputs.num1}}
   # b: ${{github.event.inputs.num2}}
   
 jobs : 
@@ -31,7 +31,7 @@ jobs :
 
       - name : Run first job     
         run: |
-         echo $msg
+         echo python first.py $d
 
   # job2 :
   #   runs-on : ubuntu-latest
