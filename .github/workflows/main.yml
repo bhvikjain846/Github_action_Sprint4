@@ -18,6 +18,8 @@ env :
   # msg : I am bhvik jain
   d: ${{github.event.inputs.num1}}
   b: ${{github.event.inputs.num2}}
+  file1: first.py
+  file2: second.py
   
 jobs : 
   job1 : 
@@ -31,11 +33,9 @@ jobs :
 
       - name : Run first job     
         run: |
-         python first.py $d
-         python second.py
+         python $file1 $d
 
   job2 :
-    needs : job1
     runs-on : ubuntu-latest
 
     steps:
@@ -45,5 +45,5 @@ jobs :
           python-version: '3.10'
 
       - name : Run second job
-        run : python second.py $b
+        run : python $file2 $b
 
