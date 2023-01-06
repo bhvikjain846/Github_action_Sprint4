@@ -7,17 +7,15 @@ on :
   workflow_dispatch:
     inputs : 
       num1 :
-        description: "Enter a decimal no.: "
-        type: environment
+        description: "Enter a string:  "
         required: true
 
       num2 :
-        description: "Enter a binary no.: "
-        type: environment
+        description: 'Enter a string: '
         required: true
 
 env :
-  d: ${{github.event.inputs.num1}}
+  a: ${{github.event.inputs.num1}}
   b: ${{github.event.inputs.num2}}
   
 jobs : 
@@ -31,7 +29,7 @@ jobs :
           python-version: '3.10'
 
       - name : Run first job     
-        run: python first.py $d
+        run: python first.py $a
 
   job2 :
     runs-on : ubuntu-latest
