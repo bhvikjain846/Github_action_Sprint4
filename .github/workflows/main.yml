@@ -8,10 +8,12 @@ on :
     inputs : 
       num1 :
         description: "Enter a decimal no.: "
+        type: environment
         required: true
 
       num2 :
         description: "Enter a binary no.: "
+        type: environment
         required: true
 
 env :
