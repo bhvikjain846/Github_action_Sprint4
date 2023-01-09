@@ -34,17 +34,17 @@ jobs :
       - name : Run first job     
         run: |
          python first.py $a
-         python second.py $a $b
+        #  python second.py $a $b
 
-  # job2 :
-  #   runs-on : ubuntu-latest
+  job2 :
+    runs-on : ubuntu-latest
 
-  #   steps:
-  #     - uses: actions/checkout@v3 
-  #     - uses: actions/setup-python@v4
-  #       with:
-  #         python-version: '3.10'
+    steps:
+      - uses: actions/checkout@v3 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-  #     - name : Run second job
-  #       run : python second.py $b
+      - name : Run second job
+        run : python second.py $a $b
 
