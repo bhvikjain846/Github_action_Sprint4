@@ -12,7 +12,7 @@ on :
         # type : number
 
       num2 :
-        description: "Enter a binary no.: "
+        description: "Enter a no.: "
         required: true
         # type : number
 
