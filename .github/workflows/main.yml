@@ -9,17 +9,17 @@ on :
       num1 :
         description: "Enter a decimal no.: "
         required: true
+        # type : number
 
       num2 :
         description: "Enter a binary no.: "
         required: true
+        # type : number
 
 env :
   # msg : I am bhvik jain
   d: ${{github.event.inputs.num1}}
   b: ${{github.event.inputs.num2}}
-  file1: first.py
-  file2: second.py
   
 jobs : 
   job1 : 
@@ -33,7 +33,7 @@ jobs :
 
       - name : Run first job     
         run: |
-         python $file1 $d
+         python first.py $d
 
   job2 :
     runs-on : ubuntu-latest
@@ -45,5 +45,5 @@ jobs :
           python-version: '3.10'
 
       - name : Run second job
-        run : python $file2 $b
+        run : python second.py $b
 

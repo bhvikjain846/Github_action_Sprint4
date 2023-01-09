@@ -1,7 +1,6 @@
 # binary to decimal
-import os
-nums = os.environ["b"]
-b=input()
+import sys
+b=int(sys.argv[2])
 def btod(b):
     d = 0
     for number in b:
