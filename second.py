@@ -1,14 +1,5 @@
 import sys
-num = int(sys.argv[2])
-flag = False
-if num == 1:
-    print(num, "is not a prime number")
-elif num > 1:
-    for i in range(2, num):
-        if (num % i) == 0:
-            flag = True
-            break
-    if flag:
-        print(num, "is not a prime number")
-    else:
-        print(num, "is a prime number")
+num1 = int(sys.argv[1])
+num2 = int(sys.argv[2])
+num3 = num1+num2
+print(num3)

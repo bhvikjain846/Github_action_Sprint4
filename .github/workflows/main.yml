@@ -7,13 +7,19 @@ on :
   workflow_dispatch:
     inputs : 
       num1 :
-        description: "Enter a decimal no.: "
+        description: "Enter first no.: "
         required: true
+        # type : number
+
+      num2 :
+        description: "Enter second no.: "
+        required: true
+        # type : number
 
 env :
   # msg : I am bhvik jain
-  d: ${{github.event.inputs.num1}}
-  # b: ${{github.event.inputs.num2}}
+  a: ${{github.event.inputs.num1}}
+  b: ${{github.event.inputs.num2}}
   
 jobs : 
   job1 : 
@@ -27,17 +33,17 @@ jobs :
 
       - name : Run first job     
         run: |
-         python first.py $d
+         python first.py $a
 
-  # job2 :
-  #   runs-on : ubuntu-latest
+  job2 :
+    runs-on : ubuntu-latest
 
-  #   steps:
-  #     - uses: actions/checkout@v3 
-  #     - uses: actions/setup-python@v4
-  #       with:
-  #         python-version: '3.10'
+    steps:
+      - uses: actions/checkout@v3 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-  #     - name : Run second job
-  #       run : python second.py $b
+      - name : Run second job
+        run : python second.py $b
 
