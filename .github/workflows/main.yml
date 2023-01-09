@@ -34,7 +34,7 @@ jobs :
       - name : Run first job     
         run: |
          python first.py $a
-         python second.py $b
+         python second.py $a $b
 
   # job2 :
   #   runs-on : ubuntu-latest
