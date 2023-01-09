@@ -1,6 +1,6 @@
-print("My name is Bhvik Jain")
-
 # binary to decimal
+import os
+nums = os.environ["b"]
 b=input()
 def btod(b):
     d = 0

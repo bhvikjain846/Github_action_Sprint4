@@ -1,5 +1,7 @@
 # decimal to binary
-d=input()
+import os
+nums = os.environ["d"]
+d=input(nums)
 def dtob(d):
     if d > 1:
         dtob(d // 2)
