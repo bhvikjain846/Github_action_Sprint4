@@ -18,8 +18,8 @@ on :
 
 env :
   # msg : I am bhvik jain
-  a: ${{github.event.inputs.num1}}
-  b: ${{github.event.inputs.num2}}
+  num1: ${{github.event.inputs.num1}}
+  num2: ${{github.event.inputs.num2}}
   
 jobs : 
   job1 : 
@@ -33,7 +33,7 @@ jobs :
 
       - name : Run first job     
         run: |
-         python first.py $a
+         python first.py $num1
         #  python second.py $a $b
 
   job2 :
@@ -46,5 +46,4 @@ jobs :
           python-version: '3.10'
 
       - name : Run second job
-        run : python second.py $a $b
-
+        run : python second.py $num1 $num2
